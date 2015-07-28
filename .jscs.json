@@ -1,4 +1,6 @@
 {
+	"es3": true,
+
 	"additionalRules": [],
 
 	"requireSemicolons": true,
