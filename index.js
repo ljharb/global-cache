@@ -33,14 +33,20 @@ var requirePrimitiveKey = function requirePrimitiveKey(val) {
 };
 
 var globalCache = {
-	has: function has(key) {
+	'delete': function deleteKey(key) {
 		requirePrimitiveKey(key);
-		return getPrimitiveKey(key) in cache;
+		delete cache[getPrimitiveKey(key)];
+		return !globalCache.has(key);
 	},
 
 	get: function get(key) {
 		requirePrimitiveKey(key);
 		return cache[getPrimitiveKey(key)];
+	},
+
+	has: function has(key) {
+		requirePrimitiveKey(key);
+		return getPrimitiveKey(key) in cache;
 	},
 
 	set: function set(key, value) {
@@ -49,12 +55,6 @@ var globalCache = {
 		props[getPrimitiveKey(key)] = value;
 		define(cache, props);
 		return globalCache.has(key);
-	},
-
-	'delete': function deleteKey(key) {
-		requirePrimitiveKey(key);
-		delete cache[getPrimitiveKey(key)];
-		return !globalCache.has(key);
 	}
 };
 
