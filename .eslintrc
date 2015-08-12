@@ -5,7 +5,8 @@
 
 	"rules": {
 		"dot-notation": [2, { "allowKeywords": false }],
-		"max-statements": [2, 11],
+		"max-nested-callbacks": [2, 3],
+		"max-statements": [2, 12],
 		"no-extra-parens": [1]
 	}
 }

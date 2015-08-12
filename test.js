@@ -39,5 +39,21 @@ test('symbols', { skip: !hasSymbols }, function (t) {
 	t.notOk(globalCache.has(sym), 'global cache does not have symbol key');
 	t.equal(globalCache.get(sym), undefined, 'global cache returns undefined for symbol key');
 
+	t.test('when the module is included twice', function (st) {
+		Object.keys(require.cache).some(function (id) {
+			if (require.cache[id].exports === globalCache) {
+				delete require.cache[id];
+				return true;
+			}
+		});
+		var globalCache2 = require('./');
+		st.notEqual(globalCache, globalCache2, 'both cache objects are different');
+
+		globalCache.set('foo', bar);
+		var bar2 = globalCache2.get('foo');
+		st.equal(bar2, bar, 'global cache 2 can retrieve things global cache 1 sets');
+		st.end();
+	});
+
 	t.end();
 });
