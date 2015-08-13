@@ -42,7 +42,7 @@ assert(cache.has(key) === false);
 Simply clone the repo, `npm install`, and run `npm test`
 
 [1]: https://npmjs.org/package/global-cache
-[2]: http://vb.teelaun.ch/ljharb/global-cache.svg
+[2]: http://versionbadg.es/ljharb/global-cache.svg
 [3]: https://travis-ci.org/ljharb/global-cache.svg
 [4]: https://travis-ci.org/ljharb/global-cache
 [5]: https://david-dm.org/ljharb/global-cache.svg
