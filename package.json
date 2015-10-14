@@ -26,7 +26,7 @@
 		"global object"
 	],
 	"dependencies": {
-		"define-properties": "^1.1.1",
+		"define-properties": "^1.1.2",
 		"is-symbol": "^1.0.1"
 	},
 	"devDependencies": {
