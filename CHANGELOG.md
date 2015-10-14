@@ -1,3 +1,10 @@
+1.0.2 / 2015-10-14
+=================
+  * [Deps] update `define-properties`
+  * [Dev Deps] update `tape`, `jscs`, `eslint`, `@ljharb/eslint-config`, `nsp`, `semver`
+  * [Tests] up to `io.js` `v3.3`, `node` `v4.2`
+  * [Docs] Switch from vb.teelaun.ch to versionbadg.es for the npm version badge SVG
+
 1.0.1 / 2015-08-12
 =================
   * [Fix] Use `Symbol.for` to ensure that multiple instances of `global-cache` on the page share the same cache.

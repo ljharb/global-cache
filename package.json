@@ -1,6 +1,6 @@
 {
 	"name": "global-cache",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"author": "Jordan Harband",
 	"description": "Sometimes you have to do horrible things, like use the global object to share a singleton. Abstract that away, with this!",
 	"license": "MIT",
