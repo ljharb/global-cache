@@ -5,6 +5,7 @@
 
 	"rules": {
 		"dot-notation": [2, { "allowKeywords": false }],
+		"global-require": [1],
 		"max-nested-callbacks": [2, 3],
 		"max-statements": [2, 12],
 		"no-extra-parens": [1]
