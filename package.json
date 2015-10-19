@@ -1,7 +1,18 @@
 {
 	"name": "global-cache",
 	"version": "1.0.2",
-	"author": "Jordan Harband",
+	"author": {
+		"name": "Jordan Harband",
+		"email": "ljharb@gmail.com",
+		"url": "http://ljharb.codes"
+	},
+	"contributors": [
+		{
+			"name": "Jordan Harband",
+			"email": "ljharb@gmail.com",
+			"url": "http://ljharb.codes"
+		}
+	],
 	"description": "Sometimes you have to do horrible things, like use the global object to share a singleton. Abstract that away, with this!",
 	"license": "MIT",
 	"main": "index.js",
