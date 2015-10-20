@@ -1,3 +1,9 @@
+1.0.3 / 2015-10-19
+=================
+  * [Robustness] Ensure that when `Symbol` and `Symbol.for` are available, they're real Symbols and not gross fake ones
+  * package.json: use object form of "authors", add "contributors"
+  * [Dev Deps] update `jscs`, `eslint`, `@ljharb/eslint-config`
+
 1.0.2 / 2015-10-14
 =================
   * [Deps] update `define-properties`
