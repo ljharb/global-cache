@@ -4,7 +4,7 @@ var define = require('define-properties');
 var isSymbol = require('is-symbol');
 
 var globalKey = '__ global cache key __';
-if (typeof Symbol === 'function' && typeof Symbol['for'] === 'function') {
+if (typeof Symbol === 'function' && isSymbol(Symbol()) && typeof Symbol['for'] === 'function') {
 	globalKey = Symbol['for'](globalKey);
 }
 if (!global[globalKey]) {
