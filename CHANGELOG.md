@@ -1,3 +1,10 @@
+1.1.0 / 2016-01-29
+=================
+  * [New] add `#clear()` to clear the cache
+  * [Dev Deps] update `tape`, `jscs`, `nsp`, `eslint`, `@ljharb/eslint-config`, `semver`
+  * [Tests] up to `node` `v5.5`, don’t allow `0.8` to fail
+  * [Tests] fix npm upgrades on older nodes
+
 1.0.3 / 2015-10-19
 =================
   * [Robustness] Ensure that when `Symbol` and `Symbol.for` are available, they're real Symbols and not gross fake ones
