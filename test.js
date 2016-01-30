@@ -20,6 +20,11 @@ test('basic usage', function (t) {
 	t.notOk(globalCache.has(key), 'global cache does not have key');
 	t.equal(globalCache.get(key), undefined, 'global cache returns undefined for key');
 
+	globalCache.set(key, bar);
+	t.ok(globalCache.has(key), 'global cache has key before clear');
+	globalCache.clear();
+	t.notOk(globalCache.has(key), 'global cache does not have key after clear');
+
 	t.end();
 });
 

@@ -7,13 +7,17 @@ var globalKey = '__ global cache key __';
 if (typeof Symbol === 'function' && isSymbol(Symbol()) && typeof Symbol['for'] === 'function') {
 	globalKey = Symbol['for'](globalKey);
 }
-if (!global[globalKey]) {
-	var properties = {};
-	properties[globalKey] = {};
-	define(global, properties);
-}
 
-var cache = global[globalKey];
+var ensureCache = function ensureCache() {
+	if (!global[globalKey]) {
+		var properties = {};
+		properties[globalKey] = {};
+		define(global, properties);
+	}
+	return global[globalKey];
+};
+
+var cache = ensureCache();
 
 var isPrimitive = function isPrimitive(val) {
 	return val === null || (typeof val !== 'object' && typeof val !== 'function');
@@ -33,6 +37,11 @@ var requirePrimitiveKey = function requirePrimitiveKey(val) {
 };
 
 var globalCache = {
+	clear: function clear() {
+		delete global[globalKey];
+		cache = ensureCache();
+    },
+
 	'delete': function deleteKey(key) {
 		requirePrimitiveKey(key);
 		delete cache[getPrimitiveKey(key)];
