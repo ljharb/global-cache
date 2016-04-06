@@ -5,10 +5,11 @@ var globalCache = require('./');
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
 
 test('exceptions', function (t) {
-	t['throws'](function () { globalCache.get({}); }, 'throws on non-primitive key');
-	t['throws'](function () { globalCache.set({}); }, 'throws on non-primitive key');
-	t['throws'](function () { globalCache.has({}); }, 'throws on non-primitive key');
-	t['throws'](function () { globalCache['delete']({}); }, 'throws on non-primitive key');
+	t['throws'](function () { globalCache.get({}); }, '`get` throws on non-primitive key');
+	t['throws'](function () { globalCache.set({}); }, '`set` throws on non-primitive key');
+	t['throws'](function () { globalCache.has({}); }, '`has` throws on non-primitive key');
+	t['throws'](function () { globalCache['delete']({}); }, '`delete` throws on non-primitive key');
+	t['throws'](function () { globalCache.setIfMissingAndGet({}); }, '`setIfMissingAndGet` throws on non-primitive key');
 
 	t.end();
 });
@@ -33,6 +34,27 @@ test('basic usage', function (t) {
 	t.ok(globalCache.has(key), 'global cache has key before clear');
 	globalCache.clear();
 	t.notOk(globalCache.has(key), 'global cache does not have key after clear');
+
+	t.end();
+});
+
+test('.setIfMissingThenGet()', function (t) {
+	var key = 'missing';
+	var a = {};
+	var b = {};
+	var values = [a, b];
+	var thunk = function () { return values.pop(); };
+
+	t.notOk(globalCache.has(key), 'global cache starts out without key');
+	t.equal(globalCache.setIfMissingThenGet(key, thunk), b, 'global cache sets result of thunk');
+	t.deepEqual(values, [a], 'values array has last item popped off');
+
+	t.equal(globalCache.setIfMissingThenGet(key, thunk), b, 'global cache skips thunk when has key');
+	t.deepEqual(values, [a], 'values array is unchanged');
+
+	t.ok(globalCache['delete'](key), 'global cache can delete key');
+	t.equal(globalCache.setIfMissingThenGet(key, thunk), a, 'global cache sets result of thunk');
+	t.deepEqual(values, [], 'values array has last item popped off');
 
 	t.end();
 });

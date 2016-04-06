@@ -65,6 +65,15 @@ var globalCache = {
 		props[getPrimitiveKey(key)] = value;
 		define(cache, props);
 		return globalCache.has(key);
+	},
+
+	setIfMissingThenGet: function setIfMissingThenGet(key, valueThunk) {
+		if (globalCache.has(key)) {
+			return globalCache.get(key);
+		}
+		var item = valueThunk();
+		globalCache.set(key, item);
+		return item;
 	}
 };
 
