@@ -4,6 +4,15 @@ var test = require('tape');
 var globalCache = require('./');
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
 
+test('exceptions', function (t) {
+	t['throws'](function () { globalCache.get({}); }, 'throws on non-primitive key');
+	t['throws'](function () { globalCache.set({}); }, 'throws on non-primitive key');
+	t['throws'](function () { globalCache.has({}); }, 'throws on non-primitive key');
+	t['throws'](function () { globalCache['delete']({}); }, 'throws on non-primitive key');
+
+	t.end();
+});
+
 test('basic usage', function (t) {
 	var key = 'foo';
 	var bar = { baz: 'quux' };
@@ -44,7 +53,7 @@ test('symbols', { skip: !hasSymbols }, function (t) {
 	t.notOk(globalCache.has(sym), 'global cache does not have symbol key');
 	t.equal(globalCache.get(sym), undefined, 'global cache returns undefined for symbol key');
 
-	t.test('when the module is included twice', function (st) {
+	t.test('when the module is included twice', { skip: !require.cache }, function (st) {
 		Object.keys(require.cache).some(function (id) {
 			if (require.cache[id].exports === globalCache) {
 				delete require.cache[id];
