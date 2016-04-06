@@ -17,12 +17,15 @@
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
-		"pretest": "npm run --silent lint",
+		"pretest": "parallelshell 'npm run --silent lint' 'npm run --silent cover'",
 		"test": "npm run --silent tests-only",
-		"tests-only": "node --es-staging test.js",
 		"posttest": "npm run --silent security",
-		"coverage": "covert test.js",
-		"coverage-quiet": "covert test.js --quiet",
+		"tests-only": "node --es-staging test.js",
+		"cover": "npm run --silent cover:clean && npm run --silent cover:istanbul && npm run --silent cover:check",
+		"cover:clean": "rimraf coverage",
+		"cover:istanbul": "istanbul cover test.js --report html",
+		"cover:check": "istanbul check",
+		"cover:covert": "covert test.js",
 		"lint": "npm run --silent jscs && npm run --silent eslint",
 		"jscs": "jscs test.js *.js",
 		"eslint": "eslint test.js *.js",
@@ -51,7 +54,10 @@
 		"eslint": "^2.5.3",
 		"@ljharb/eslint-config": "^2.2.0",
 		"replace": "^0.3.0",
-		"semver": "^5.1.0"
+		"semver": "^5.1.0",
+		"istanbul": "^1.0.0-alpha.2",
+		"rimraf": "^2.5.2",
+		"parallelshell": "^2.0.0"
 	},
 	"testling": {
 		"files": "test.js",
