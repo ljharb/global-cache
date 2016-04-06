@@ -1,3 +1,12 @@
+1.2.0 / 2016-04-06
+=================
+  * [New] add `setIfMissingThenGet`
+  * [Tests] Add istanbul for code coverage and run it as part of tests.
+  * [Tests] add tests for exceptions
+  * [Tests] use pretest/posttest for linting/security; add `--silent`
+  * [Tests] up to `node` `v5.10`, `v4.4`
+  * [Dev Deps] update `jscs`, `eslint`, `@ljharb/eslint-config`, `nsp`
+
 1.1.0 / 2016-01-29
 =================
   * [New] add `#clear()` to clear the cache
