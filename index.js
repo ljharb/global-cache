@@ -41,7 +41,7 @@ var globalCache = {
 	clear: function clear() {
 		delete global[globalKey];
 		cache = ensureCache();
-    },
+	},
 
 	'delete': function deleteKey(key) {
 		requirePrimitiveKey(key);
