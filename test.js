@@ -85,6 +85,7 @@ test('symbols', { skip: !hasSymbols }, function (t) {
 			}
 			return false;
 		});
+		// eslint-disable-next-line global-require
 		var globalCache2 = require('./');
 		st.notEqual(globalCache, globalCache2, 'both cache objects are different');
 
