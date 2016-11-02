@@ -4,7 +4,7 @@
 
 var test = require('tape');
 var globalCache = require('./');
-var hasSymbols = typeof Symbol === 'function' && typeof Symbol() === 'symbol';
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
 
 test('exceptions', function (t) {
 	t['throws'](function () { globalCache.get({}); }, '`get` throws on non-primitive key');
