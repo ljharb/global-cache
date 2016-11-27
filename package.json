@@ -17,11 +17,11 @@
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
-		"pretest": "npm run --silent lint && npm run --silent cover",
+		"pretest": "npm run --silent lint && npm run --silent coverage",
 		"test": "npm run --silent tests-only",
 		"posttest": "npm run --silent security",
 		"tests-only": "node --es-staging test.js",
-		"cover": "npm run --silent cover:clean && npm run --silent cover:istanbul && npm run --silent cover:check",
+		"coverage": "npm run --silent cover:clean && npm run --silent cover:istanbul && npm run --silent cover:check",
 		"cover:clean": "rimraf coverage",
 		"cover:istanbul": "istanbul cover test.js --report html",
 		"cover:check": "istanbul check",

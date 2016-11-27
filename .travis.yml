@@ -1,5 +1,7 @@
 language: node_js
 node_js:
+  - "7.2"
+  - "7.1"
   - "7.0"
   - "6.9"
   - "6.8"
@@ -63,7 +65,7 @@ before_install:
 script:
   - 'if [ -n "${LINT-}" ]; then npm run lint ; fi'
   - 'if [ -n "${POSTTEST-}" ]; then npm run posttest ; fi'
-  - 'if [ -n "${COVERAGE-}" ]; then npm run cover ; fi'
+  - 'if [ -n "${COVERAGE-}" ]; then npm run coverage ; fi'
   - 'if [ -n "${TEST-}" ]; then npm run tests-only ; fi'
 sudo: false
 env:
@@ -78,6 +80,8 @@ matrix:
     - node_js: "4"
       env: COVERAGE=true
   allow_failures:
+    - node_js: "7.1"
+    - node_js: "7.0"
     - node_js: "6.8"
     - node_js: "6.7"
     - node_js: "6.6"
