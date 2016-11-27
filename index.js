@@ -5,7 +5,9 @@ var isSymbol = require('is-symbol');
 
 var globalKey = '__ global cache key __';
 /* istanbul ignore else */
+// eslint-disable-next-line no-restricted-properties
 if (typeof Symbol === 'function' && isSymbol(Symbol('foo')) && typeof Symbol['for'] === 'function') {
+	// eslint-disable-next-line no-restricted-properties
 	globalKey = Symbol['for'](globalKey);
 }
 
