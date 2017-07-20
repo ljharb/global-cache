@@ -19,12 +19,17 @@ test('exceptions', function (t) {
 test('basic usage', function (t) {
 	var key = 'foo';
 	var bar = { baz: 'quux' };
+	var baz = { quux: 'xyzzy' };
 
 	t.notOk(globalCache.has(key), 'global cache starts out without key');
 
 	t.ok(globalCache.set(key, bar), 'global cache is able to set key');
 	t.ok(globalCache.has(key), 'global cache has key');
 	t.equal(globalCache.get(key), bar, 'global cache returns value for key');
+
+	t.ok(globalCache.set(key, baz), 'global cache is able to re-set key');
+	t.ok(globalCache.has(key), 'global cache still has key');
+	t.equal(globalCache.get(key), baz, 'global cache returns new value for key');
 
 	t.notOk(key in global, 'key is not in global object');
 

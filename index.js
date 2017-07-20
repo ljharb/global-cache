@@ -11,11 +11,17 @@ if (typeof Symbol === 'function' && isSymbol(Symbol('foo')) && typeof Symbol['fo
 	globalKey = Symbol['for'](globalKey);
 }
 
+var trueThunk = function () {
+	return true;
+};
+
 var ensureCache = function ensureCache() {
 	if (!global[globalKey]) {
 		var properties = {};
 		properties[globalKey] = {};
-		define(global, properties);
+		var predicates = {};
+		predicates[globalKey] = trueThunk;
+		define(global, properties, predicates);
 	}
 	return global[globalKey];
 };
@@ -63,9 +69,12 @@ var globalCache = {
 
 	set: function set(key, value) {
 		requirePrimitiveKey(key);
+		var primitiveKey = getPrimitiveKey(key);
 		var props = {};
-		props[getPrimitiveKey(key)] = value;
-		define(cache, props);
+		props[primitiveKey] = value;
+		var predicates = {};
+		predicates[primitiveKey] = trueThunk;
+		define(cache, props, predicates);
 		return globalCache.has(key);
 	},
 
