@@ -1,3 +1,10 @@
+1.2.1 / 2017-07-20
+=================
+  * [Fix] `set`: actually overwrite values
+  * [Tests] up to `node` `v8.1`, `v7.10`, `v6.11`; npm < 5 breaks on node < 4; improve matrix
+  * [Dev Deps] update `tape`, `jscs`, `nsp`, `eslint`, `@ljharb/eslint-config`, `semver`, `rimraf`
+  * [Dev Deps] remove unused dep `parallelshell`
+
 1.2.0 / 2016-04-06
 =================
   * [New] add `setIfMissingThenGet`
