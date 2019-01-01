@@ -26,9 +26,7 @@
 		"cover:istanbul": "istanbul cover test.js --report html",
 		"cover:check": "istanbul check",
 		"cover:covert": "covert test.js",
-		"lint": "npm run --silent jscs && npm run --silent eslint",
-		"jscs": "jscs test.js *.js",
-		"eslint": "eslint test.js *.js",
+		"lint": "eslint .",
 		"security": "nsp check"
 	},
 	"repository": {
@@ -51,7 +49,6 @@
 		"covert": "^1.1.0",
 		"eslint": "^4.19.1",
 		"istanbul": "^1.0.0-alpha.2",
-		"jscs": "^3.0.7",
 		"nsp": "^3.2.1",
 		"replace": "^1.0.0",
 		"rimraf": "^2.6.2",
