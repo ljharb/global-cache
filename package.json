@@ -19,7 +19,7 @@
 	"scripts": {
 		"pretest": "npm run --silent lint && npm run --silent coverage",
 		"test": "npm run --silent tests-only",
-		"posttest": "npm run --silent security",
+		"posttest": "npm run audit",
 		"tests-only": "node --es-staging test.js",
 		"coverage": "npm run --silent cover:clean && npm run --silent cover:istanbul && npm run --silent cover:check",
 		"cover:clean": "rimraf coverage",
@@ -27,7 +27,9 @@
 		"cover:check": "istanbul check",
 		"cover:covert": "covert test.js",
 		"lint": "eslint .",
-		"security": "nsp check"
+		"preaudit": "npm install --package-lock --package-lock-only",
+		"audit": "npm audit",
+		"postaudit": "rm package-lock.json"
 	},
 	"repository": {
 		"type": "git",
@@ -49,7 +51,6 @@
 		"covert": "^1.1.0",
 		"eslint": "^4.19.1",
 		"istanbul": "^1.0.0-alpha.2",
-		"nsp": "^3.2.1",
 		"replace": "^1.0.0",
 		"rimraf": "^2.6.2",
 		"semver": "^5.5.0",
