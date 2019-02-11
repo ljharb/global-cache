@@ -49,12 +49,12 @@
 	"devDependencies": {
 		"@ljharb/eslint-config": "^13.1.1",
 		"covert": "^1.1.1",
-		"eslint": "^5.11.1",
+		"eslint": "^5.13.0",
 		"istanbul": "^1.0.0-alpha.2",
 		"replace": "^1.0.1",
-		"rimraf": "^2.6.2",
+		"rimraf": "^2.6.3",
 		"semver": "^5.6.0",
-		"tape": "^4.9.2"
+		"tape": "^4.10.0"
 	},
 	"testling": {
 		"files": "test.js",
