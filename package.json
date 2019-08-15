@@ -20,12 +20,12 @@
 		"pretest": "npm run --silent lint && npm run --silent coverage",
 		"test": "npm run --silent tests-only",
 		"posttest": "npm run audit",
-		"tests-only": "node --es-staging test.js",
+		"tests-only": "node --es-staging test",
 		"coverage": "npm run --silent cover:clean && npm run --silent cover:istanbul && npm run --silent cover:check",
 		"cover:clean": "rimraf coverage",
-		"cover:istanbul": "istanbul cover test.js --report html",
+		"cover:istanbul": "istanbul cover test --report html",
 		"cover:check": "istanbul check",
-		"cover:covert": "covert test.js",
+		"cover:covert": "covert test",
 		"lint": "eslint .",
 		"preaudit": "npm install --package-lock --package-lock-only",
 		"audit": "npm audit",
@@ -47,17 +47,17 @@
 		"is-symbol": "^1.0.2"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^13.1.1",
+		"@ljharb/eslint-config": "^14.0.2",
 		"covert": "^1.1.1",
-		"eslint": "^5.13.0",
+		"eslint": "^6.1.0",
 		"istanbul": "^1.0.0-alpha.2",
-		"replace": "^1.0.1",
-		"rimraf": "^2.6.3",
-		"semver": "^5.6.0",
-		"tape": "^4.10.0"
+		"replace": "^1.1.0",
+		"rimraf": "^2.7.1",
+		"semver": "^6.3.0",
+		"tape": "^4.11.0"
 	},
 	"testling": {
-		"files": "test.js",
+		"files": "test/index.js",
 		"browsers": [
 			"iexplore/6.0..latest",
 			"firefox/3.0..6.0",

@@ -1,9 +1,7 @@
 'use strict';
 
-/* eslint max-statements-per-line: [2, { "max": 2 }] */
-
 var test = require('tape');
-var globalCache = require('./');
+var globalCache = require('..');
 var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
 
 test('exceptions', function (t) {
@@ -91,7 +89,7 @@ test('symbols', { skip: !hasSymbols }, function (t) {
 			return false;
 		});
 		// eslint-disable-next-line global-require
-		var globalCache2 = require('./');
+		var globalCache2 = require('..');
 		st.notEqual(globalCache, globalCache2, 'both cache objects are different');
 
 		globalCache.set('foo', bar);
