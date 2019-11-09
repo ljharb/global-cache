@@ -8,8 +8,6 @@
 
 [![npm badge][11]][1]
 
-[![browser support][9]][10]
-
 Sometimes you have to do horrible things, like use the global object to share a singleton. Abstract that away, with this!
 
 This attaches a cache to the global object. It attempts to make it as undiscoverable as possible:
@@ -49,8 +47,6 @@ Simply clone the repo, `npm install`, and run `npm test`
 [6]: https://david-dm.org/ljharb/global-cache
 [7]: https://david-dm.org/ljharb/global-cache/dev-status.svg
 [8]: https://david-dm.org/ljharb/global-cache#info=devDependencies
-[9]: https://ci.testling.com/ljharb/global-cache.png
-[10]: https://ci.testling.com/ljharb/global-cache
 [11]: https://nodei.co/npm/global-cache.png?downloads=true&stars=true
 [license-image]: http://img.shields.io/npm/l/global-cache.svg
 [license-url]: LICENSE
