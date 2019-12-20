@@ -52,10 +52,8 @@
 		"covert": "^1.1.1",
 		"eslint": "^6.6.0",
 		"istanbul": "^1.0.0-alpha.2",
-		"replace": "^1.1.1",
 		"rimraf": "^2.7.1",
 		"safe-publish-latest": "^1.1.4",
-		"semver": "^6.3.0",
 		"tape": "^4.11.0"
 	},
 	"testling": {
