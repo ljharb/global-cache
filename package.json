@@ -51,7 +51,7 @@
 		"@ljharb/eslint-config": "^17.2.0",
 		"aud": "^1.1.2",
 		"covert": "^1.1.1",
-		"eslint": "^7.9.0",
+		"eslint": "^7.11.0",
 		"istanbul": "^1.0.0-alpha.2",
 		"rimraf": "^2.7.1",
 		"safe-publish-latest": "^1.1.4",
