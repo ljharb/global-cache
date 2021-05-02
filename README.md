@@ -1,6 +1,5 @@
 # global-cache <sup>[![Version Badge][2]][1]</sup>
 
-[![Build Status][3]][4]
 [![dependency status][5]][6]
 [![dev dependency status][7]][8]
 [![License][license-image]][license-url]
@@ -40,15 +39,13 @@ assert(cache.has(key) === false);
 Simply clone the repo, `npm install`, and run `npm test`
 
 [1]: https://npmjs.org/package/global-cache
-[2]: http://versionbadg.es/ljharb/global-cache.svg
-[3]: https://travis-ci.org/ljharb/global-cache.svg
-[4]: https://travis-ci.org/ljharb/global-cache
+[2]: https://versionbadg.es/ljharb/global-cache.svg
 [5]: https://david-dm.org/ljharb/global-cache.svg
 [6]: https://david-dm.org/ljharb/global-cache
 [7]: https://david-dm.org/ljharb/global-cache/dev-status.svg
 [8]: https://david-dm.org/ljharb/global-cache#info=devDependencies
 [11]: https://nodei.co/npm/global-cache.png?downloads=true&stars=true
-[license-image]: http://img.shields.io/npm/l/global-cache.svg
+[license-image]: https://img.shields.io/npm/l/global-cache.svg
 [license-url]: LICENSE
-[downloads-image]: http://img.shields.io/npm/dm/global-cache.svg
-[downloads-url]: http://npm-stat.com/charts.html?package=global-cache
+[downloads-image]: https://img.shields.io/npm/dm/global-cache.svg
+[downloads-url]: https://npm-stat.com/charts.html?package=global-cache
