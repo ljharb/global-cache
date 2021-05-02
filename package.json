@@ -20,7 +20,8 @@
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
-		"prepublish": "safe-publish-latest",
+		"prepublishOnly": "safe-publish-latest",
+		"prepublish": "not-in-publish || npm run prepublishOnly",
 		"pretest": "npm run --silent lint && npm run --silent coverage",
 		"test": "npm run --silent tests-only",
 		"posttest": "aud --production",
