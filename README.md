@@ -1,5 +1,6 @@
 # global-cache <sup>[![Version Badge][2]][1]</sup>
 
+[![coverage][codecov-image]][codecov-url]
 [![dependency status][5]][6]
 [![dev dependency status][7]][8]
 [![License][license-image]][license-url]
@@ -49,3 +50,5 @@ Simply clone the repo, `npm install`, and run `npm test`
 [license-url]: LICENSE
 [downloads-image]: https://img.shields.io/npm/dm/global-cache.svg
 [downloads-url]: https://npm-stat.com/charts.html?package=global-cache
+[codecov-image]: https://codecov.io/gh/ljharb/global-cache/branch/main/graphs/badge.svg
+[codecov-url]: https://app.codecov.io/gh/ljharb/global-cache/
