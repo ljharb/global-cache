@@ -44,13 +44,13 @@
 		"is-symbol": "^1.0.3"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^17.2.0",
-		"aud": "^1.1.2",
-		"eslint": "^7.11.0",
+		"@ljharb/eslint-config": "^18.0.0",
+		"aud": "^1.1.5",
+		"eslint": "^7.32.0",
 		"nyc": "^10.3.2",
 		"rimraf": "^2.7.1",
-		"safe-publish-latest": "^1.1.4",
-		"tape": "^5.0.1"
+		"safe-publish-latest": "^1.1.5",
+		"tape": "^5.3.1"
 	},
 	"testling": {
 		"files": "test/index.js",
