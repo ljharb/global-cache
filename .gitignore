@@ -33,3 +33,5 @@ coverage/
 yarn.lock
 package-lock.json
 npm-shrinkwrap.json
+
+.npmignore
